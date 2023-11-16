@@ -20,13 +20,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var provider = new FileExtensionContentTypeProvider();
-provider.Mappings[".webmanifest"] = "application/manifest+json";
 
-app.UseStaticFiles(new StaticFileOptions()
-{
-    ContentTypeProvider = provider
-});
+app.UseStaticFiles();
 
 app.MapDefaultControllerRoute();
 
